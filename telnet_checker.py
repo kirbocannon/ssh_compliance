@@ -31,11 +31,13 @@ def run_cmd(host):
         # send enter key
         remote_shell.send("\n")
         # send command + enter key
-        remote_shell.send('show ip int br' + '\n')
+        remote_shell.send('show running-config | include ^line vty|transport input' + '\n')
         # Wait for the command to complete
         time.sleep(8)
         output = remote_shell.recv(65000)
-        print(output)
+        if not 'ssh' in output:
+            print('vulnerable')
+        #print(output)
         #return output
     except (ssh_err.BadHostKeyException, ssh_err.AuthenticationException,
             ssh_err.SSHException, ssh_err.socket.error) as e:
