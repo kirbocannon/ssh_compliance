@@ -26,7 +26,6 @@ def run_cmd(host):
                     allow_agent=False, timeout=5)
         print("SSH connection established to {0}".format(host))
         remote_shell = ssh.invoke_shell() # need shell for cisco devices
-        print("Interactive SSH session established")
         disable_paging(remote_shell)
         # send enter key
         remote_shell.send("\n")
