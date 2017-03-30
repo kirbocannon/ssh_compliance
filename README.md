@@ -1,4 +1,2 @@
-# ansiblelab
-# ssh_compliance
-# ssh_compliance
-# ssh_compliance
+This script can SSH to network devices and run commands.
+Multithreading is available.
