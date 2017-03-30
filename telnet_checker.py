@@ -44,7 +44,7 @@ def run_cmd(host):
 
 if __name__ == '__main__':
     hosts = ['172.16.1.46', '172.16.1.47', '172.16.1.48', '172.16.1.49']
-    # run processes in parallel with the help of pool and map
+    # run threads in parallel with the help of pool and map
     results = pool.map(run_cmd, hosts)
     # close the pool and wait for the work to finish
     pool.close()
