@@ -4,6 +4,7 @@ from multiprocessing.dummy import Pool as ThreadPool
 import paramiko
 import time
 
+# Workers are waiting to do work here
 pool = ThreadPool(4)
 
 def disable_paging(remote_shell):
