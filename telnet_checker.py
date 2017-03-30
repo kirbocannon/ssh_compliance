@@ -47,6 +47,8 @@ if __name__ == '__main__':
     # run threads in parallel with the help of pool and map
     results = pool.map(run_cmd, hosts)
     # close the pool and wait for the work to finish
+    # join blocks the calling thread until everything is finished
+    # then other code can run below
     pool.close()
     pool.join()
 
